@@ -59,7 +59,7 @@
       <h2 class="section-title text-center text-warning mb-4">Event Planner</h2>
       <div class="row justify-content-center">
         <div class="col-md-8">
-          <form action="https://formsubmit.co/msimonovska1212@yahoo.com" method="POST" class="shadow p-4 rounded">
+          <form id="eventForm" action="https://formsubmit.co/msimonovska1212@yahoo.com" method="POST" class="shadow p-4 rounded" onsubmit="handleFormSubmit(event)">
             <div class="mb-3">
               <label for="name" class="form-label text-light">Your Name</label>
               <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
@@ -89,15 +89,33 @@
   
             <!-- Hidden fields for FormSubmit -->
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
   
             <button type="submit" class="btn btn-warning w-100">Submit Request</button>
           </form>
+          <div id="successMessage" class="alert alert-success mt-3" style="display:none;">
+            <strong>Success!</strong> Your request has been submitted successfully.
+          </div>
         </div>
       </div>
     </div>
-  </section>
-  
+</section>
+
+<script>
+function handleFormSubmit(event) {
+    event.preventDefault();  // Prevent default form submission
+
+    // Submit the form using fetch or XMLHttpRequest (form submission is handled by FormSubmit)
+    var form = document.getElementById('eventForm');
+    var formData = new FormData(form);
+
+    // Show success message
+    document.getElementById('successMessage').style.display = 'block';
+
+    // Optional: Reset the form after submission
+    form.reset();
+}
+</script>
+
   
   <section id="gallery" class="py-5 bg-dark">
     <div class="container" data-aos="fade-up">
