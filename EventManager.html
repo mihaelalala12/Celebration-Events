@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner By Mihaela</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2c3e50;
+            padding: 1rem;
+            color: white;
+        }
+
+        nav h1 {
+            text-align: center;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Event Form */
+        .event-form {
+            background: #f5f6fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #2c3e50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #34495e;
+        }
+
+        /* Event List */
+        .events-list {
+            margin-top: 2rem;
+        }
+
+        .event-card {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .event-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-actions {
+            margin-top: 1rem;
+        }
+
+        .event-actions button {
+            margin-right: 0.5rem;
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Event Planner By Mihaela</h1>
+    </nav>
+
+    <div class="container">
+        <div class="event-form">
+            <h2>Create New Event</h2>
+            <form id="eventForm" action="send_email.php" method="POST" class="shadow p-4 rounded">
+                <div class="form-group">
+                  <label for="eventName">Event Name</label>
+                  <input type="text" id="eventName" name="eventName" required>
+                </div>
+                <div class="form-group">
+                  <label for="eventDate">Date</label>
+                  <input type="datetime-local" id="eventDate" name="eventDate" required>
+                </div>
+                <div class="form-group">
+                  <label for="eventLocation">Location</label>
+                  <input type="text" id="eventLocation" name="eventLocation" required>
+                </div>
+                <div class="form-group">
+                  <label for="eventDescription">Description</label>
+                  <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="eventType">Event Type</label>
+                  <select id="eventType" name="eventType" required>
+                    <option value="">Select Type</option>
+                    <option value="Birthday">Birthday Party</option>
+                    <option value="Wedding">Wedding</option>
+                    <option value="Corporate">Corporate Event</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <button type="submit">Create Event</button>
+              </form>
+              
+        </div>
+
+        <div class="events-list" id="eventsList">
+            <!-- Events will be added here dynamically -->
+        </div>
+    </div>
+    <div style="text-align: center; margin: 2rem 0;">
+        <a href="index.html" style="padding: 1rem 3rem; background: #2c3e50; color: white; text-decoration: none; border-radius: 30px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px;">HOME</a>
+    </div>
+    <script>
+        class EventManager {
+            constructor() {
+                this.events = JSON.parse(localStorage.getItem('events')) || [];
+                this.form = document.getElementById('eventForm');
+                this.eventsList = document.getElementById('eventsList');
+                
+                this.initializeEventListeners();
+                this.renderEvents();
+            }
+
+            initializeEventListeners() {
+                this.form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.addEvent();
+                });
+            }
+
+            addEvent() {
+                const event = {
+                    id: Date.now(),
+                    name: document.getElementById('eventName').value,
+                    date: document.getElementById('eventDate').value,
+                    location: document.getElementById('eventLocation').value,
+                    description: document.getElementById('eventDescription').value,
+                    type: document.getElementById('eventType').value
+                };
+
+                this.events.push(event);
+                this.saveEvents();
+                this.renderEvents();
+                this.form.reset();
+            }
+
+            deleteEvent(id) {
+                this.events = this.events.filter(event => event.id !== id);
+                this.saveEvents();
+                this.renderEvents();
+            }
+
+            saveEvents() {
+                localStorage.setItem('events', JSON.stringify(this.events));
+            }
+
+            renderEvents() {
+                this.eventsList.innerHTML = '';
+                this.events.forEach(event => {
+                    const eventCard = document.createElement('div');
+                    eventCard.className = 'event-card';
+                    eventCard.innerHTML = `
+                        <h3>${event.name}</h3>
+                        <p><strong>Date:</strong> ${new Date(event.date).toLocaleString()}</p>
+                        <p><strong>Location:</strong> ${event.location}</p>
+                        <p><strong>Type:</strong> ${event.type}</p>
+                        <p><strong>Description:</strong> ${event.description}</p>
+                        <div class="event-actions">
+                            <button onclick="eventManager.deleteEvent(${event.id})" class="delete-btn">Delete</button>
+                        </div>
+                    `;
+                    this.eventsList.appendChild(eventCard);
+                });
+            }
+        }
+
+        // Initialize the Event Manager
+        const eventManager = new EventManager();
+    </script>
+</body>
+</html>

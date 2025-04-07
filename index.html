@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Celebration Events – Unforgettable Moments</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand text-danger" href="#">Celebration Events</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+         <ul class="navbar-nav">
+           <li class="nav-item "><a class="nav-link" href="#home">Home</a></li>
+           <li class="nav-item "><a class="nav-link" href="#schedule">Event Planner</a></li>
+           <li class="nav-item "><a class="nav-link" href="#gallery">Gallery</a></li>
+           <li class="nav-item "><a class="nav-link" href="#services">Services</a></li>
+           <li class="nav-item "><a class="nav-link" href="#testimonials">Testimonials</a></li>
+           <li class="nav-item "><a class="nav-link" href="#faq">FAQ</a></li>
+           <li class="nav-item "><a class="nav-link" href="#contact">Contact</a></li>
+         </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <section id="home" class="hero">
+    <div class="container hero-content text-center" data-aos="fade-in" data-aos-duration="1500">
+      <h1 class="animate__animated animate__fadeInDown text-danger">Create Unforgettable Moments</h1>
+      <p class="animate__animated animate__fadeInUp animate__delay-1s">Let us plan the celebration of your dreams</p>
+      <div class="mt-4">
+        <a href="#schedule" class="btn btn-warning btn-lg me-2 animate__animated animate__zoomIn animate__delay-2s">Plan Your Event</a>
+        <a href="#gallery" class="btn btn-outline-light btn-lg animate__animated animate__zoomIn animate__delay-2s">View Gallery</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="schedule" class="py-5 bg-dark">
+    <div class="container" data-aos="fade-right">
+      <h2 class="section-title text-center text-warning mb-4">Event Planner</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form id="eventForm" class="shadow p-4 rounded">
+            <div class="mb-3">
+              <label for="name" class="form-label text-light">Your Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label text-light">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="eventDate" class="form-label text-light">Event Date</label>
+              <input type="date" class="form-control" id="eventDate" required>
+            </div>
+            <div class="mb-3">
+              <label for="eventType" class="form-label text-light">Event Type</label>
+              <select class="form-select" id="eventType" required>
+                <option value="">Select an event type</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Corporate">Corporate</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label text-light">Additional Details</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Tell us more about your event"></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning w-100">Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="gallery" class="py-5 bg-dark">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title text-center text-danger mb-4">Gallery</h2>
+      <div class="row g-3">
+
+        <div class="col-sm-6 col-md-4">
+          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal1">
+            <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (1).jpeg" alt="Gallery Image 1" class="img-fluid">
+          </div>
+        </div>
+  <div class="col-sm-6 col-md-4">
+          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal2">
+            <img src="./images/WhatsApp Image 2025-02-07 at 14.25.54 (2).jpeg" alt="Gallery Image 2" class="img-fluid">
+          </div>
+        </div>
+       <div class="col-sm-6 col-md-4">
+          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3">
+            <img src="./images/WhatsApp Image 2025-02-07 at 14.25.54 (5).jpeg" alt="Gallery Image 3" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center bg-dark mt-4">
+      <a href="gallery.html" class="btn btn-warning btn-lg text-danger">View Full Gallery</a>
+   </div>
+  </section>
+  
+  <div class="modal fade" id="galleryModal1" tabindex="-1" aria-labelledby="galleryModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="galleryModalLabel1">Wedding Day</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (1).jpeg" class="img-fluid" alt="Gallery Image 1">
+         </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="galleryModal2" tabindex="-1" aria-labelledby="galleryModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="galleryModalLabel2">Gallery Image 2</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           <img src="./images/WhatsApp Image 2025-02-07 at 14.25.54 (3).jpeg" class="img-fluid" alt="Gallery Image 2">
+         </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="galleryModal3" tabindex="-1" aria-labelledby="galleryModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="galleryModalLabel3">Gallery Image 3</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (5).jpeg" class="img-fluid" alt="Gallery Image 3">
+         </div>
+      </div>
+    </div>
+  </div>
+ 
+
+  
+  <section id="services" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title text-center text-danger mb-4">Our Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 shadow bg-dark">
+            <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (5).jpeg" class="card-img-top" alt="Consultation">
+            <div class="card-body">
+              <h5 class="card-title text-warning">Consultation & Planning</h5>
+              <p class="card-text text-light">Personalized advice and detailed planning tailored to your vision.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card h-100 shadow bg-dark">
+            <img src="./images/WhatsApp Image 2025-02-07 at 14.25.54 (3).jpeg" class="card-img-top" alt="Decoration">
+            <div class="card-body">
+              <h5 class="card-title text-warning">Decoration & Design</h5>
+              <p class="card-text text-light">Innovative concepts and exquisite design transforming every venue.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card h-100 shadow bg-dark">
+            <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (2).jpeg" class="card-img-top" alt="Event Management">
+            <div class="card-body">
+              <h5 class="card-title text-warning">Event Management</h5>
+              <p class="card-text text-light">Seamless execution and coordination ensuring a flawless celebration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="testimonials" class="py-5 bg-dark">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title text-center text-danger mb-4">Testimonials</h2>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex flex-column align-items-center">
+              <p class="lead text-center text-light">"Celebration Events made our wedding a dream come true! Every detail was magical."</p>
+              <h5 class="mt-3 text-warning">Sarah & John</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex flex-column align-items-center">
+              <p class="lead text-center text-light">"Our corporate event was flawlessly executed and exceeded all our expectations."</p>
+              <h5 class="mt-3 text-warning">ABC Corporation</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex flex-column align-items-center">
+              <p class="lead text-center text-light">"The team at Celebration Events brought our vision to life with exceptional creativity."</p>
+              <h5 class="mt-3 text-warning">Emily R.</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <section id="faq" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title text-danger mb-4">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item btn-outline-light" data-aos="fade-right" data-aos-delay="100">
+          <h2 class="accordion-header" id="faqHeadingOne">
+            <button class="accordion-button bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+              How does the planning process work?
+            </button>
+          </h2>
+          <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              We begin with a comprehensive consultation to understand your vision, then move on to detailed planning and flawless execution.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" data-aos="fade-right" data-aos-delay="200">
+          <h2 class="accordion-header" id="faqHeadingTwo">
+            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+              What types of events do you plan?
+            </button>
+          </h2>
+          <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              From weddings and birthdays to corporate events and private parties, we plan events of all sizes and styles.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" data-aos="fade-right" data-aos-delay="300">
+          <h2 class="accordion-header" id="faqHeadingThree">
+            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+              How can I book a consultation?
+            </button>
+          </h2>
+          <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Simply fill out our Event Planner form above or call us at (123) 456-7890 to schedule your consultation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="py-5 bg-dark">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title text-center text-warning mb-4">Contact Us</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form id="contactForm" class="shadow p-4 rounded">
+            <div class="mb-3">
+              <label for="contactName" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="contactName" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="contactEmail" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="contactEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="contactMessage" class="form-label">Message</label>
+              <textarea class="form-control" id="contactMessage" rows="4" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning w-100">Send Message</button>
+          </form>
+          <div class="mt-4 text-center text-light">
+            <p><i class="bi bi-telephone-fill"></i> <strong>Phone:</strong> (123) 456-7890</p>
+            <p><i class="bi bi-envelope-fill"></i> <strong>Email:</strong> info@celebrationevents.com</p>
+            <p><i class="bi bi-geo-alt-fill"></i> <strong>Address:</strong> 123 Celebration Street, Event City, EC 12345</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="text-center text-danger">
+    <div class="container">
+      <p>&copy; 2025 Celebration Events. All rights reserved.</p>
+      <p><a href="#home">Back to Top</a></p>
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+    
+    new WOW().init();
+    
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      preloader.style.opacity = '0';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    });
+  </script>
+  
+</body>
+</html>

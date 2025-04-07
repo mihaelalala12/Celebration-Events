@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery - Celebration Events</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+ <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      padding-top: 70px; /* offset for fixed navbar */
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Celebration Events</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+         <ul class="navbar-nav">
+           <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+           <li class="nav-item"><a class="nav-link" href="index.html#schedule">Event Planner</a></li>
+           <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+           <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+           <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+         </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <section id="gallery" class="py-5">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title text-center mb-4">Full Gallery</h2>
+      <div class="row g-3">
+        <div class="col-sm-6 col-md-4">
+          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal1">
+            <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (1).jpeg" alt="Gallery Image 1">
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal2">
+            <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (2).jpeg" alt="Gallery Image 2">
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3">
+            <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (3).jpeg" alt="Gallery Image 3">
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3">
+              <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (4).jpeg" alt="Gallery Image 3">
+            </div>      
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3">
+              <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (5).jpeg" alt="Gallery Image 3">
+            </div>
+            
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3">
+          <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53.jpeg" alt="Gallery Image 3">
+        </div>
+        
+  </section>
+  
+  <div class="modal fade" id="galleryModal1" tabindex="-1" aria-labelledby="galleryModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="galleryModalLabel1">Gallery Image 1</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           <img src="./images/WhatsApp Image 2025-02-07 at 14.25.53 (1).jpeg" class="img-fluid" alt="Gallery Image 1">
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="galleryModal2" tabindex="-1" aria-labelledby="galleryModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="galleryModalLabel2">Gallery Image 2</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           <img src="./images/gallery2.jpg" class="img-fluid" alt="Gallery Image 2">
+         </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="galleryModal3" tabindex="-1" aria-labelledby="galleryModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="galleryModalLabel3">Gallery Image 3</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           <img src="./images/gallery3.jpg" class="img-fluid" alt="Gallery Image 3">
+         </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="text-center py-4 bg-dark text-white">
+    <div class="container">
+      <p>&copy; 2025 Celebration Events. All rights reserved.</p>
+      <p><a href="index.html#home" class="text-warning">Back to Home</a></p>
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
